@@ -12,15 +12,21 @@
     margin-top: 32px;
     padding: 12px;
     .message {
-      border: 1px solid;
+      width: fit-content;
       padding: 8px;
-      background-color: #fff9f9;
       border-radius: 6px;
       &:not(:first-child) {
         margin-top: 8px;
       }
+      &.my-message {
+        background-color: #a3c1ff;
+        margin-left: auto;
+      }
+      &.other-message {
+        background-color: #ebd3ac;
+      }
       .messageUserName {
-        color: red;
+        color: #0e0e16;
         font-weight: bold;
       }
       .messageText {

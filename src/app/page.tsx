@@ -4,8 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import styles from "./styles/Home.module.scss";
 import io from "socket.io-client";
 
-// const socket = io("http://localhost:5001");
-const socket = io("https://realtimechat-server-k8ck.onrender.com")
+const socket = io("http://localhost:5001");
+// const socket = io("https://realtimechat-server-k8ck.onrender.com")
 
 type MessageType = {
   userName: string;
@@ -92,6 +92,10 @@ export default function Home() {
     return typingUserStr
   }
 
+  const getContentClassName = (targetUserName: string) => {
+    return targetUserName === userName ? `${styles['my-message']}` : `${styles['other-message']}`
+  }
+
   useEffect(() => {
     let chatArea: HTMLElement | null = document.getElementById('chatArea')
 
@@ -119,7 +123,7 @@ export default function Home() {
       </div>
       <div id="chatArea" className={styles.chatArea}>
         {messageList.map((message: MessageType, index: number) => (
-          <div key={index} className={styles.message}>
+          <div key={index} className={`${styles.message} ${getContentClassName(message.userName)}`}>
             <p className={styles.messageUserName}>
               {message.userName}
             </p>
