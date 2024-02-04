@@ -5,7 +5,7 @@ import styles from "./styles/Home.module.scss";
 import io from "socket.io-client";
 
 // const socket = io("http://localhost:5001");
-const socket = io("https://realtimechat-server-cm5sxlxvia-uc.a.run.app")
+const socket = io("https://realtimechat-server-k8ck.onrender.com")
 
 type MessageType = {
   userName: string;
