@@ -1,0 +1,46 @@
+.main {
+  padding: 32px;
+  .inputUserName {
+    margin-top: 12px;
+  }
+  .chatArea {
+    width: 600px;
+    height: 300px;
+    border: 1px solid;
+    overflow: auto;
+    border-radius: 6px;
+    margin-top: 32px;
+    padding: 12px;
+    .message {
+      border: 1px solid;
+      padding: 8px;
+      background-color: #fff9f9;
+      border-radius: 6px;
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+      .messageUserName {
+        color: red;
+        font-weight: bold;
+      }
+      .messageText {
+        margin-top: 8px;
+      }
+    }
+  }
+  .typingUserArea {
+    margin-top: 8px;
+    height: 40px;
+  }
+  .inputArea {
+    margin-top: 32px;
+    textarea {
+      width: 400px;
+      height: 80px;
+    }
+    button {
+      margin-left: 16px;
+      vertical-align: bottom;
+    }
+  }
+}
